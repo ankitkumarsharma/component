@@ -1,0 +1,12 @@
+<h2 class="ak-title"></h2>
+<app-ak-form [formConfig]="formConfig" (formGroupReceiever)="onReceiveFormGroup($event)"></app-ak-form>
+<mat-dialog-actions align="end">
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      <button mat-button class="secondary-btn" mat-dialog-close>Cancel</button>
+    </li>
+    <li class="list-inline-item">
+      <button mat-button class="primary-btn" (click)="onSubmit()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+    </li>
+  </ul>
+</mat-dialog-actions>

@@ -1,0 +1,40 @@
+<div class="space-30"></div>
+<button class="primary-btn" routerLink="/">Back</button>
+<app-contact [data]="contactData"></app-contact>
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
+        <button class="primary-btn" mat-button (click)="openDialogOne()">Open Dialog 1</button>
+      </div>
+      <div class="col-md-6">
+        <button class="primary-btn" mat-button (click)="openDialogTwo()">Open Dialog 2</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button class="primary-btn" mat-button (click)="openFormDialogOne()">Open Form Dialog 1</button>
+      </div>
+      <div class="col-md-6">
+        <button class="primary-btn" mat-button (click)="openFormDialogTwo()">Open Form Dialog 2</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <ul>
+      <li>
+        For Dialog One: <span>{{dialogOneData}}</span>
+      </li>
+      <li>
+        For Dialog Two: <span>{{dialogTwoData}}</span>
+      </li>
+      <li>
+        For Form Dialog One: <span>{{dialogFormOneData | json}}</span>
+      </li>
+      <li>
+        For Form Dialog Two: <span>{{dialogFormTwoData | json}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+

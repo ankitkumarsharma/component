@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" novalidate>
+  <div *ngFor="let group of formConfig.groups">
+    <ng-container [ngSwitch]="group.type">
+      <ng-container *ngSwitchCase="'divider'">
+        <div class="divider"></div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'grey'">
+        <p class="ak-sub-title">{{group.groupName}}</p>
+      </ng-container>
+      <ng-container *ngSwitchCase="'underline'">
+        <p class="ak-sub-title">{{group.groupName}}</p>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <p class="ak-sub-title">{{group.groupName}}</p>
+      </ng-container>
+    </ng-container>
+    <div class="row">
+      <ng-container *ngFor="let control of group.controls">
+        <div class="col-{{
+          getBootstrapColumnWidth(group.columns) == 12 ? 6: getBootstrapColumnWidth(group.columns)
+        }}">
+          <app-ak-form-elements [class]="getWidthForControl('input', control)"
+            (stateChange)="onStateChange($event, control.controlName)" [config]="control"
+            [formControlName]="control.controlName" [errorMessage]="getFormControlErrorMessage(control)"
+            [required]="isRequiredField(control)"></app-ak-form-elements>
+        </div>
+      </ng-container>
+      <div class="col-{{
+        getBootstrapColumnWidth(group.columns) == 12 ? 6: 0
+      }}"></div>
+    </div>
+  </div>
+</form>

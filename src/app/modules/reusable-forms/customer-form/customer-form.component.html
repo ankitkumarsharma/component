@@ -1,0 +1,18 @@
+<div class="space-30"></div>
+<button class="primary-btn" routerLink="/reusable-forms">Back</button>
+<app-contact [data]="contactData"></app-contact>
+<div class="row">
+  <div class="col-md-12">
+    <app-ak-body>
+        <p class="ak-title">{{customerForm.name}}</p>
+      <app-ak-form
+        [formConfig]="customerForm"
+        (formGroupReceiever)="onReceiveFormGroup($event)"
+      ></app-ak-form>
+    </app-ak-body>
+    <button class="primary-btn" (click)="onSubmit()" type="submit">
+      Submit
+    </button>
+  </div>
+</div>
+<div class="space-30"></div>

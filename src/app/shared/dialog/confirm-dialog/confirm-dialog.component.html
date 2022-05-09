@@ -1,0 +1,16 @@
+<h2 mat-dialog-title class="ak-title">{{data?.title}}</h2>
+<mat-dialog-content class="mat-typography">
+  <p class="ak-para">
+    {{data?.desc}}
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      <button mat-button class="secondary-btn" mat-dialog-close>Cancel</button>
+    </li>
+    <li class="list-inline-item">
+      <button mat-button class="primary-btn" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+    </li>
+  </ul>
+</mat-dialog-actions>

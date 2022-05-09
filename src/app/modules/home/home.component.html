@@ -1,0 +1,17 @@
+<div class="space-30"></div>
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="ak-title text-center">This tutorial is going for <span class="ak-title-lg">Component Interaction</span></h2>
+  </div>
+</div>
+<app-contact [data]="contactData"></app-contact>
+<div class="row">
+  <div title="{{item.status ? 'Done':'Pending'}}" *ngFor="let item of componentType" class="col-md-3">
+    <div routerLink="{{item.link}}" class="card" [ngClass]="{'disabled': !item.status }">
+      <div class="card-body">
+        <h2 class="ak-title">{{item.name}}</h2>
+        <h3 class="ak-sub-title">{{item.info}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

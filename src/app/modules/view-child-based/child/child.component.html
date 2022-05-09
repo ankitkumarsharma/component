@@ -1,0 +1,9 @@
+<div class="space-10"></div>
+<table *ngIf="collapseList" class="table">
+  <tr *ngFor="let item of arrList;let i=index;">
+    <td>{{item.id}}{{i}}</td>
+    <td>{{item.userId}}{{i}}</td>
+    <td>{{item.title}}{{i}}</td>
+    <td>{{item.body}}{{i}}</td>
+  </tr>
+</table>

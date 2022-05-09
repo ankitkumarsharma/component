@@ -1,0 +1,16 @@
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <th>Id</th>
+      <th>User ID</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+    <tr *ngFor="let item of data">
+      <td>{{item.id}}</td>
+      <td>{{item.userId}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.body}}</td>
+    </tr>
+  </table>
+</div>

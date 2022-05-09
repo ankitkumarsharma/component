@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-2">
+    <input #text1 (change)="text1Data(text1.value)" type="number" value="0" class="form-control">
+  </div>
+  <div class="col-1">
+    <h2 class="ak-title-lg">{{optSymbal}}</h2>
+  </div>
+  <div class="col-md-2">
+    <input #text2 (change)="text2Data(text2.value)" type="number" value="0" class="form-control">
+  </div>
+  <div class="col-md-1">
+    <p class="ak-title">=</p>
+  </div>
+  <div class="col-md-3">
+    <input type="text" class="form-control" [value]="result" disabled>
+  </div>
+</div>
+<app-child (btnClick)="operationClick($event)"></app-child>

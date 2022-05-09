@@ -1,0 +1,11 @@
+<div class="row form-group">
+  <div class="col-md-6">
+    {{getLabelName()}}
+  </div>
+  <div class="col-md-6">
+    <textarea [readonly]="readonly" [formControl]="control" type="text" class="form-control"
+      (focusin)="focusinState=true;updateTouchState()" (focusout)="focusoutState=true;updateTouchState()"
+      (blur)="stateChange.next('blur')"></textarea>
+    <app-ak-error [displayError]="error" [errorMessage]="errorMessage"></app-ak-error>
+  </div>
+</div>

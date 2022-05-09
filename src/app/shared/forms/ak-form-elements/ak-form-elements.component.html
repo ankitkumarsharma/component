@@ -1,0 +1,37 @@
+<div [ngSwitch]="config.type">
+  <app-ak-password [readonly]="config?.readOnly" *ngSwitchCase="'password'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required] ="required">
+  </app-ak-password>
+
+  <app-ak-date [readonly]="config?.readOnly" *ngSwitchCase="'date'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required] ="required">
+  </app-ak-date>
+
+  <app-ak-search [readonly]="config?.readOnly" *ngSwitchCase="'search'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required] ="required">
+  </app-ak-search>
+
+  <app-ak-text [readonly]="config?.readOnly" *ngSwitchCase="'text'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required] ="required">
+  </app-ak-text>
+
+  <app-ak-select [readonly]="config?.readOnly" *ngSwitchCase="'select'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [data]="config.dropdownData" [required] ="required">
+  </app-ak-select>
+
+  <app-ak-textarea [readonly]="config?.readOnly" *ngSwitchCase="'textarea'" [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required]="required">
+  </app-ak-textarea>
+
+  <!-- <div *ngSwitchCase="'blank'"></div>
+  <app-ak-text [readonly]="config?.readOnly" *ngSwitchDefault="'text'"  [labelName]="config.labelName"
+    [formControl]="control" [errorMessage]="errorMessage" (touchState)="onTouch()"
+    (stateChange)="stateChange.next($event)" [required] ="required">
+  </app-ak-text> -->
+</div>
